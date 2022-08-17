@@ -18,7 +18,7 @@ snacks.get("/", async (req, res) => {
   }
 });
 
-//Routes
+//Routes --
 
 //Single Snack
 snacks.get("/:id", async (req, res) => {
@@ -32,5 +32,11 @@ snacks.get("/:id", async (req, res) => {
       .json({ payload: "not found", success: false, error: "Snack not found" });
   }
 });
+
+//Delete Snack
+
+//Create snack
+
+//Edit Snack
 
 module.exports = snacks;

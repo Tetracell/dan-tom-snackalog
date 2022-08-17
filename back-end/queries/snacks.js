@@ -20,6 +20,27 @@ const getSnack = async (id) => {
   }
 };
 
+//Create Snack
 
+const makeSnack = async (snack) => {
+  try {
+    const newSnack = await db.one(
+      "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [
+        snack.name,
+        snack.fiber,
+        snack.protein,
+        snack.added_sugar,
+        snack.is_health,
+        snack.image,
+      ]
+    );
+    return newSnack;
+  } catch (error) {
+    return error;
+  }
+};
+
+//Delete Snack
 
 module.exports = { getAllSnacks, getSnack };
