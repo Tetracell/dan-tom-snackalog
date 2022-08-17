@@ -1,13 +1,13 @@
 \c snack_a_log; 
 
 CREATE TABLE snacks(
-    ID          SERIAL PRIMARY KEY,
-    NAME        TEXT NOT NULL,
-    FIBER       INT NOT NULL,
-    PROTEIN     INT NOT NULL,
-    ADDED_SUGAR INT NOT NULL,
+    ID          SERIAL  PRIMARY KEY,
+    NAME        TEXT    NOT NULL,
+    FIBER       INT     NOT NULL,
+    PROTEIN     INT     NOT NULL,
+    ADDED_SUGAR INT     NOT NULL,
     IS_HEALTHY  BOOLEAN NOT NULL,
-    IMAGE       TEXT NOT NULL
+    IMAGE       TEXT    NOT NULL
 );
 
 INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES
