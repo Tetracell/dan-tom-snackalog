@@ -11,4 +11,4 @@ const getAllSnacks = async () => {
   }
 };
 
-module.exports = {};
+module.exports = { getAllSnacks };
