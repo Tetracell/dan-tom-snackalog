@@ -20,4 +20,6 @@ const getSnack = async (id) => {
   }
 };
 
+
+
 module.exports = { getAllSnacks, getSnack };
