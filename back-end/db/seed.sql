@@ -1,5 +1,15 @@
 \c snack_a_log; 
 
+CREATE TABLE snacks(
+    ID          SERIAL PRIMARY KEY,
+    NAME        TEXT NOT NULL,
+    FIBER       INT NOT NULL,
+    PROTEIN     INT NOT NULL,
+    ADDED_SUGAR INT NOT NULL,
+    IS_HEALTHY  BOOLEAN NOT NULL,
+    IMAGE       TEXT NOT NULL
+);
+
 INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES
 ('Strawberries', 20, 10, 0, true, 'https://picsum.photos/id/1080/300/300'),
 ('Raspberries', 16, 4, 0, true, 'https://picsum.photos/id/102/300/300'),
