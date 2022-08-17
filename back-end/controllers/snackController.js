@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("../db/dbConfig");
 const snacks = express.Router();
 
-const { getAllSnacks } = require("../queries/snacks");
+const { getAllSnacks, getSnack } = require("../queries/snacks");
 
 //Index
 snacks.get("/", async (req, res) => {
@@ -16,14 +16,14 @@ snacks.get("/", async (req, res) => {
 });
 
 //Routes
-// snacks.get("/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const snack = await getSnack(id);
-//   if (snack) {
-//     res.json(snack);
-//   } else {
-//     res.status(404).json({ error: "Snack not found" });
-//   }
-// });
+snacks.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const snack = await getSnack(id);
+  if (snack) {
+    res.json(snack);
+  } else {
+    res.status(404).json({ error: "Snack not found" });
+  }
+});
 
 module.exports = snacks;
