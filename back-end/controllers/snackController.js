@@ -2,7 +2,11 @@ const express = require("express");
 const db = require("../db/dbConfig");
 const snacks = express.Router();
 
-const { getAllSnacks, getSnack } = require("../queries/snacks");
+//Queries
+const { getAllSnacks, getSnack, makeSnack } = require("../queries/snacks");
+
+//Validation(s)
+const { checkName, checkHealthy } = require("../validations/checkSnack");
 
 //Index - All snacks
 snacks.get("/", async (req, res) => {
@@ -33,9 +37,17 @@ snacks.get("/:id", async (req, res) => {
   }
 });
 
-//Delete Snack
+//Create snack -- Tests failing at the moment
+snacks.post("/", checkName, async (req, res) => {
+  try {
+    const newSnack = await makeSnack(req.body);
+    res.status(200).json({ payload: newSnack, success: true});
+  } catch (error) {
+    return error;
+  }
+});
 
-//Create snack
+//Delete Snack
 
 //Edit Snack
 

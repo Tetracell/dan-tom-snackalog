@@ -1,7 +1,8 @@
 const db = require("../db/dbConfig.js");
 
-// (name, fiber, protein, added_sugar, is_healthy, image)
+// (name, image, fiber, protein, added_sugar, is_healthy)
 
+//All snacks
 const getAllSnacks = async () => {
   try {
     const allSnacks = await db.any("SELECT * FROM snacks");
@@ -11,6 +12,7 @@ const getAllSnacks = async () => {
   }
 };
 
+//Single Snack
 const getSnack = async (id) => {
   try {
     const oneSnack = await db.one("SELECT * FROM snacks WHERE id=$1", id);
@@ -21,8 +23,13 @@ const getSnack = async (id) => {
 };
 
 //Create Snack
-
 const makeSnack = async (snack) => {
+  let healthySnack;
+  if (snack.fiber >= 5 || snack.protein >= 5) {
+    snack.added_sugar < 5 ? (healthySnack = true) : (healthySnack = false);
+  } else {
+    healthySnack = false;
+  }
   try {
     const newSnack = await db.one(
       "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
@@ -31,7 +38,7 @@ const makeSnack = async (snack) => {
         snack.fiber,
         snack.protein,
         snack.added_sugar,
-        snack.is_health,
+        healthySnack,
         snack.image,
       ]
     );
@@ -43,4 +50,4 @@ const makeSnack = async (snack) => {
 
 //Delete Snack
 
-module.exports = { getAllSnacks, getSnack };
+module.exports = { getAllSnacks, getSnack, makeSnack };
