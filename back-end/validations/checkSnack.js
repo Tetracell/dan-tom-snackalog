@@ -1,7 +1,7 @@
 const checkName = (req, res, next) => {
   console.log("Performing check on snack name for proper capitalization");
   // Should not be run when a snack is 2 characters or less
-  if (req.body.name.length < 2) {
+  if (req.body.name.length <= 2) {
     console.log("Name too short for validation");
     next();
   }
@@ -20,15 +20,4 @@ const checkName = (req, res, next) => {
   }
 };
 
-// Check if snack is healthy
-const checkHealthy = (req, res, next) => {
-  console.log("Performing health check");
-  if (req.body.fiber >= 5 || req.body.protein >= 5) {
-    if (req.body.added_sugar < 5) {
-      console.log("Snack seems to be healthy");
-      return true;
-    }
-  }
-};
-
-module.exports = { checkName, checkHealthy };
+module.exports = { checkName };
