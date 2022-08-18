@@ -3,10 +3,15 @@ const db = require("../db/dbConfig");
 const snacks = express.Router();
 
 //Queries
-const { getAllSnacks, getSnack, makeSnack } = require("../queries/snacks");
+const {
+  getAllSnacks,
+  getSnack,
+  makeSnack,
+  eatSnack,
+} = require("../queries/snacks");
 
 //Validation(s)
-const { checkName, checkHealthy } = require("../validations/checkSnack");
+const { checkName } = require("../validations/checkSnack");
 
 //Index - All snacks
 snacks.get("/", async (req, res) => {
@@ -41,14 +46,36 @@ snacks.get("/:id", async (req, res) => {
 snacks.post("/", checkName, async (req, res) => {
   try {
     const newSnack = await makeSnack(req.body);
-    res.status(200).json({ payload: newSnack, success: true});
+    res.status(200).json({ payload: newSnack, success: true });
   } catch (error) {
     return error;
   }
 });
 
 //Delete Snack
+snacks.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const snack = await eatSnack(id);
+    if (snack.name !== "QueryResultError") {
+      res.status(200).json({ payload: snack, success: true });
+    } else {
+      throw error;
+    }
+  } catch (error) {
+    return res.status(400).json({ payload: error, success: false });
+  }
+});
 
 //Edit Snack
+snacks.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const snack = await editSnack(req.body, id);
+    res.status(200).send(snack);
+  } catch (error) {
+    return error;
+  }
+});
 
 module.exports = snacks;
