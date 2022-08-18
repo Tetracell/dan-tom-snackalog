@@ -1,8 +1,10 @@
 const db = require("../db/dbConfig.js");
 
 // (name, image, fiber, protein, added_sugar, is_healthy)
-const healthyCheck = require("../helpers/checkHealthy");
-const imgCheck = require("../helpers/checkImage");
+
+//Helper functions
+const healthyCheck = require("../helpers/checkHealthy"); // Sends back a boolean determining the healthy status of a snack
+const imgCheck = require("../helpers/checkImage"); // Checks to see if an image was included, and sends back the default image if not.
 
 //All snacks
 const getAllSnacks = async () => {

@@ -3,11 +3,11 @@
 CREATE TABLE snacks(
     ID          SERIAL  PRIMARY KEY,
     NAME        TEXT    NOT NULL,
-    FIBER       INT     NOT NULL,
-    PROTEIN     INT     NOT NULL,
-    ADDED_SUGAR INT     NOT NULL,
-    IS_HEALTHY  BOOLEAN         ,
-    IMAGE       TEXT    NOT NULL
+    FIBER       INT,
+    PROTEIN     INT,
+    ADDED_SUGAR INT,
+    IS_HEALTHY  BOOLEAN,
+    IMAGE       TEXT   
 );
 
 INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES
