@@ -1,7 +1,26 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+//Components
+import { NewSnack } from "./Components/NewSnack";
+import { EditSnack } from "./Components/EditSnack";
+import { ShowSnack } from "./Components/ShowSnack";
+import { NavBar } from "./Components/NavBar";
+import { Snacks } from "./Components/Snacks";
+
+const API_URL = process.env.REACT_APP_API_URL;
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello, world!</h1>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Snacks API={API_URL} />} />
+        <Route path="/snacks/:id" element={<ShowSnack />} />
+        <Route path="/snacks/new" element={<NewSnack />} />
+        <Route path="/snacks/:id/edit" element={<EditSnack />} />
+      </Routes>
     </div>
   );
 }
