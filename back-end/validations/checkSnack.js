@@ -5,7 +5,6 @@ const checkName = (req, res, next) => {
     res.status(400).json({ error: "Snack name is invalid" });
   }
 };
-
 // Check that fiber is a valid value
 const checkFiber = (req, res, next) => {
   if (!req.body.fiber) {
@@ -15,7 +14,6 @@ const checkFiber = (req, res, next) => {
     res.status(400).json({ error: "Fiber must be a numeric value" });
   }
 };
-
 // Check that protein is a valid value
 const checkProtein = (req, res, next) => {
   if (!req.body.protein) {

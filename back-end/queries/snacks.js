@@ -1,24 +1,8 @@
 const db = require("../db/dbConfig.js");
 
 // (name, image, fiber, protein, added_sugar, is_healthy)
-
-const healthyCheck = (fiber, protein, sugars) => {
-  let healthy;
-  if (fiber >= 5 || protein >= 5) {
-    sugars < 5 ? (healthy = true) : (healthy = false);
-  } else {
-    healthy = false;
-  }
-  return healthy;
-};
-
-const imgCheck = (img) => {
-  if (!img) {
-    return "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
-  } else {
-    return img;
-  }
-};
+const healthyCheck = require("../helpers/checkHealthy");
+const imgCheck = require("../helpers/checkImage");
 
 //All snacks
 const getAllSnacks = async () => {
