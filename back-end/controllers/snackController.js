@@ -8,6 +8,7 @@ const {
   getSnack,
   makeSnack,
   eatSnack,
+  editSnack,
 } = require("../queries/snacks");
 
 //Validation(s)

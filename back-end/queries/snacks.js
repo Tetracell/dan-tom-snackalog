@@ -87,6 +87,7 @@ const editSnack = async (snack, id) => {
         snack.added_sugar,
         healthySnack,
         snackImg,
+        id,
       ]
     );
     return editedSnack;
