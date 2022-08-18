@@ -12,7 +12,7 @@ app.use(express.json());
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to Snack-a-log");
+  res.send("Get Snack'n at Snack-a-log!");
 });
 
 const snackController = require("./controllers/snackController");

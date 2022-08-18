@@ -6,7 +6,7 @@ CREATE TABLE snacks(
     FIBER       INT     NOT NULL,
     PROTEIN     INT     NOT NULL,
     ADDED_SUGAR INT     NOT NULL,
-    IS_HEALTHY  BOOLEAN NOT NULL,
+    IS_HEALTHY  BOOLEAN         ,
     IMAGE       TEXT    NOT NULL
 );
 
