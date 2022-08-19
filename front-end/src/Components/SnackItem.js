@@ -16,9 +16,13 @@ export const SnackItem = ({ snack }) => {
         <Link to={link}>
           {snack.name}
           {snack.is_healthy ? (
-            <img alt="yay" src={healthy}></img>
+            <h4>
+              <img alt="healthy food" src={healthy}></img>
+            </h4>
           ) : (
-            <img alt="boo" src={unhealthy}></img>
+            <h4>
+              <img alt="unhealthy food" src={unhealthy}></img>
+            </h4>
           )}
         </Link>
       </h4>
