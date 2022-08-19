@@ -27,10 +27,12 @@ export const EditSnack = ({ API }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Handling submit");
     editSnack();
   };
 
   const editSnack = () => {
+    console.log("Entering editSnack()");
     axios
       .put(`${API}/snacks/${id}`, snack)
       .then((res) => {
@@ -44,8 +46,8 @@ export const EditSnack = ({ API }) => {
 
   return (
     <div>
-      <form>
-        <label for="name">Name</label>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
@@ -53,28 +55,28 @@ export const EditSnack = ({ API }) => {
           value={snack.name}
           required
         ></input>
-        <label for="fiber">Fiber</label>
+        <label htmlFor="fiber">Fiber</label>
         <input
           type="number"
           id="fiber"
           onChange={handleChange}
           value={snack.fiber}
         ></input>
-        <label for="protein">Protein</label>
+        <label htmlFor="protein">Protein</label>
         <input
           type="number"
           id="protein"
           onChange={handleChange}
           value={snack.protein}
         ></input>
-        <label for="added_sugar">Added Sugar</label>
+        <label htmlFor="added_sugar">Added Sugar</label>
         <input
           type="number"
           id="added_sugar"
           onChange={handleChange}
           value={snack.added_sugar}
         ></input>
-        <label for="image">Image</label>
+        <label htmlFor="image">Image</label>
         <input
           type="text"
           id="image"
@@ -82,7 +84,7 @@ export const EditSnack = ({ API }) => {
           value={snack.image}
         ></input>
         <br />
-        <button onClick={handleSubmit}>Submit</button>
+        <button type="submit">Edit Snack</button>
         <button>Delete</button>
       </form>
     </div>
