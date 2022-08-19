@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { SnackItem } from "./SnackItem";
 
 export const ShowSnack = ({ API }) => {
   const [snack, setSnack] = React.useState({
@@ -17,11 +18,13 @@ export const ShowSnack = ({ API }) => {
     axios.get(`${API}/snacks/${id}`).then((res) => {
       setSnack(res.data.payload);
     });
-  });
+  }, []);
   return (
     <div>
       <h1>A SINGULAR SNACK</h1>
-      <p>
+      <SnackItem snack={snack} />
+
+      {/* <p>
         <img src={snack.image}></img>
       </p>
       <ul>
@@ -30,7 +33,7 @@ export const ShowSnack = ({ API }) => {
         <li>{snack.protein}</li>
         <li>{snack.added_sugar}</li>
         <li>{snack.is_healthy}</li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

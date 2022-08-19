@@ -11,7 +11,6 @@ export const Snacks = ({ API }) => {
   }, [API]);
   return (
     <div>
-      <h1>FUCK THIS</h1>
       {snacks.map((snack) => {
         return <SnackItem snack={snack}/>
       })}
