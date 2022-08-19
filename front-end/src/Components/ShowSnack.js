@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { SnackItem } from "./SnackItem";
 
 export const ShowSnack = ({ API }) => {
+  const navigate = useNavigate();
   const [snack, setSnack] = React.useState({
     name: "",
     fiber: "",
@@ -13,7 +14,6 @@ export const ShowSnack = ({ API }) => {
   });
 
   const { id } = useParams();
-
   React.useEffect(() => {
     axios.get(`${API}/snacks/${id}`).then((res) => {
       setSnack(res.data.payload);
@@ -21,19 +21,12 @@ export const ShowSnack = ({ API }) => {
   }, []);
   return (
     <div>
-      <h1>A SINGULAR SNACK</h1>
+      <h1>Snacks</h1>
       <SnackItem snack={snack} />
-
-      {/* <p>
-        <img src={snack.image}></img>
-      </p>
-      <ul>
-        <li>{snack.name}</li>
-        <li>{snack.fiber}</li>
-        <li>{snack.protein}</li>
-        <li>{snack.added_sugar}</li>
-        <li>{snack.is_healthy}</li>
-      </ul> */}
+      <Link to="/snacks">
+        <button>Back</button>
+      </Link>
+      <button>Delete</button>
     </div>
   );
 };
