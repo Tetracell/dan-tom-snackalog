@@ -16,6 +16,7 @@ const { checkName } = require("../validations/checkSnack");
 
 //Index - All snacks
 snacks.get("/", async (req, res) => {
+  console.log("Serving snacks");
   const allSnacks = await getAllSnacks();
   if (allSnacks[0]) {
     // A check to make sure there is at least one snack
