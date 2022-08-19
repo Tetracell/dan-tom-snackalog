@@ -17,9 +17,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Snacks API={API_URL} />} />
-        <Route path="/snack/:id" element={<ShowSnack />} />
-        <Route path="/new" element={<NewSnack />} />
-        <Route path="/snack/:id/edit" element={<EditSnack />} />
+        <Route path="/snack/:id" element={<ShowSnack API={API_URL} />} />
+        <Route path="/new" element={<NewSnack API={API_URL} />} />
+        <Route path="/snack/:id/edit" element={<EditSnack API={API_URL} />} />
       </Routes>
     </div>
   );
