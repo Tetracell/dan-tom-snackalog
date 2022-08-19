@@ -25,30 +25,36 @@ export const EditSnack = ({ API }) => {
   return (
     <div>
       <form>
+        <label for="name">Name</label>
         <input
           type="text"
           id="name"
           onChange={handleChange}
           value={snack.name}
+          required
         ></input>
+        <label for="fiber">Fiber</label>
         <input
           type="number"
           id="fiber"
           onChange={handleChange}
           value={snack.fiber}
         ></input>
+        <label for="protein">Protein</label>
         <input
           type="number"
           id="protein"
           onChange={handleChange}
           value={snack.protein}
         ></input>
+        <label for="added_sugar">Added Sugar</label>
         <input
           type="number"
           id="added_sugar"
           onChange={handleChange}
           value={snack.added_sugar}
         ></input>
+        <label for="image">Image</label>
         <input
           type="text"
           id="image"
