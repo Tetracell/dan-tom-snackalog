@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <div>
-      <h1>NavBar</h1>
+      <h1>SNACK-A-LOG</h1>
       <Link to="/snacks/new">New Snack</Link>
     </div>
   );

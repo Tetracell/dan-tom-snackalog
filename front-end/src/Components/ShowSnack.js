@@ -9,6 +9,7 @@ export const ShowSnack = ({ API }) => {
     name: "",
     fiber: "",
     protein: "",
+    added_sugar: "",
     is_healthy: "",
     image: "",
   });
@@ -19,6 +20,13 @@ export const ShowSnack = ({ API }) => {
       setSnack(res.data.payload);
     });
   }, []);
+
+  const handleDelete = () => {
+    axios.delete(`${API}/snacks/${id}`).then((res) => {
+      navigate("/snacks");
+    });
+  };
+
   return (
     <div>
       <h1>Snacks</h1>
@@ -26,7 +34,7 @@ export const ShowSnack = ({ API }) => {
       <Link to="/snacks">
         <button>Back</button>
       </Link>
-      <button>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
