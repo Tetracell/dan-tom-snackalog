@@ -8,11 +8,11 @@ export const Snacks = ({ API }) => {
     axios.get(`${API}/snacks`).then((res) => {
       setSnacks(res.data.payload);
     });
-  }, [API]);
+  }, [API, snacks]);
   return (
     <div>
       {snacks.map((snack) => {
-        return <SnackItem snack={snack}/>
+        return <SnackItem snack={snack} />;
       })}
     </div>
   );

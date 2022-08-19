@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const EditSnack = ({ API }) => {
+  const navigate = useNavigate();
   const [snack, setSnack] = useState({
     name: "",
     fiber: "",
@@ -17,11 +18,30 @@ export const EditSnack = ({ API }) => {
     axios.get(`${API}/snacks/${id}`).then((res) => {
       setSnack(res.data.payload);
     });
-  });
+  }, [API, id]);
 
   const handleChange = (e) => {
-    setSnack({ ...snack, [e.target.id]: e.target.value });
+    let value = e.target.value;
+    setSnack({ ...snack, [e.target.id]: value });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editSnack();
+  };
+
+  const editSnack = () => {
+    axios
+      .put(`${API}/snacks/${id}`, snack)
+      .then((res) => {
+        setSnack(res.data.payload);
+      })
+      .then(navigate("/snacks"))
+      .catch((error) => {
+        console.log(error.response.data.error);
+      });
+  };
+
   return (
     <div>
       <form>
@@ -61,7 +81,9 @@ export const EditSnack = ({ API }) => {
           onChange={handleChange}
           value={snack.image}
         ></input>
-        <button>Submit</button>
+        <br />
+        <button onClick={handleSubmit}>Submit</button>
+        <button>Delete</button>
       </form>
     </div>
   );

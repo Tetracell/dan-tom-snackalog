@@ -71,6 +71,7 @@ snacks.delete("/:id", async (req, res) => {
 
 //Edit Snack
 snacks.put("/:id", async (req, res) => {
+  console.log("Editing a snack");
   const { id } = req.params;
   try {
     const snack = await editSnack(req.body, id);
