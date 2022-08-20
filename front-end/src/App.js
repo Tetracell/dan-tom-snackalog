@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import axios from "axios";
+
 
 //Components
 import { NewSnack } from "./Components/NewSnack";

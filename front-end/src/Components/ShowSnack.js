@@ -20,7 +20,7 @@ export const ShowSnack = ({ API }) => {
     axios.get(`${API}/snacks/${id}`).then((res) => {
       setSnack(res.data.payload);
     });
-  }, []);
+  }, [API, id]);
 
   const handleDelete = () => {
     axios.delete(`${API}/snacks/${id}`).then((res) => {
