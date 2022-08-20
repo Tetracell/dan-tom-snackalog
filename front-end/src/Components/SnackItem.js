@@ -24,7 +24,9 @@ export const SnackItem = ({ snack }) => {
                 </aside>
               ) : (
                 <aside>
-                  <img alt="unhealthy food" src={unhealthy}></img>
+                  <span>
+                    <img alt="unhealthy food" src={unhealthy}></img>
+                  </span>
                 </aside>
               )}
             </Link>
