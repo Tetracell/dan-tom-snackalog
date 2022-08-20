@@ -34,6 +34,7 @@ export const ShowSnack = ({ API }) => {
         <div>
           <img alt={snack.name} src={snack.image} />
           <h4>
+            {snack.name}
             {snack.is_healthy ? (
               <aside>
                 <h4>
