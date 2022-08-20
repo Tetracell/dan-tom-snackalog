@@ -29,7 +29,6 @@ export const ShowSnack = ({ API }) => {
 
   return (
     <div>
-      <h1>Snacks</h1>
       <SnackItem snack={snack} />
       <Link to="/snacks">
         <button>Back</button>

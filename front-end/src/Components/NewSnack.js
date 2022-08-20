@@ -37,7 +37,7 @@ export const NewSnack = ({ API }) => {
 
   return (
     <div>
-      <h1>Snacks</h1>
+      <h1>New</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
