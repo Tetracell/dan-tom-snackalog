@@ -12,10 +12,11 @@ const {
 } = require("../queries/snacks");
 
 //Validation(s)
-const { checkName } = require("../validations/checkSnack");
+const { checkSnackName } = require("../validations/checkSnack");
 
 //Index - All snacks
 snacks.get("/", async (req, res) => {
+  console.log("Serving snacks");
   const allSnacks = await getAllSnacks();
   if (allSnacks[0]) {
     // A check to make sure there is at least one snack
@@ -44,7 +45,7 @@ snacks.get("/:id", async (req, res) => {
 });
 
 //Create snack -- Tests failing at the moment
-snacks.post("/", checkName, async (req, res) => {
+snacks.post("/", checkSnackName, async (req, res) => {
   try {
     const newSnack = await makeSnack(req.body);
     res.status(200).json({ payload: newSnack, success: true });
@@ -70,6 +71,7 @@ snacks.delete("/:id", async (req, res) => {
 
 //Edit Snack
 snacks.put("/:id", async (req, res) => {
+  console.log("Editing a snack");
   const { id } = req.params;
   try {
     const snack = await editSnack(req.body, id);

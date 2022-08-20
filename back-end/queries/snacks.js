@@ -5,6 +5,7 @@ const db = require("../db/dbConfig.js");
 //Helper functions
 const healthyCheck = require("../helpers/checkHealthy"); // Sends back a boolean determining the healthy status of a snack
 const imgCheck = require("../helpers/checkImage"); // Checks to see if an image was included, and sends back the default image if not.
+const checkName = require("../helpers/checkName"); // For capitlization of snack name
 
 //All snacks
 const getAllSnacks = async () => {
@@ -34,6 +35,7 @@ const makeSnack = async (snack) => {
     snack.added_sugar
   );
   let snackImg = imgCheck(snack.image);
+  let snackName = checkName(snack.name);
 
   // Should we make sure we have no spaces at the beginning of the string? Yes.
 
@@ -41,7 +43,7 @@ const makeSnack = async (snack) => {
     const newSnack = await db.one(
       "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
       [
-        snack.name,
+        snackName,
         snack.fiber,
         snack.protein,
         snack.added_sugar,
@@ -63,6 +65,7 @@ const editSnack = async (snack, id) => {
     snack.added_sugar
   );
   let snackImg = imgCheck(snack.image);
+  let snackName = checkName(snack.name);
   try {
     const editedSnack = await db.one(
       "UPDATE snacks SET name=$1, fiber=$2, protein=$3, added_sugar=$4, is_healthy=$5, image=$6 WHERE id=$7 RETURNING *",
