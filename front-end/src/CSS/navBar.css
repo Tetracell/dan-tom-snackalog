@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Overlock");
+
+.navbar {
+  background-color: rgb(37, 36, 34);
+  color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-bottom: 1em;
+}

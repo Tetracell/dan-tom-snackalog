@@ -1,12 +1,12 @@
 const healthyCheck = (fiber, protein, sugars) => {
   let healthy;
   if (
-    fiber == null ||
-    fiber == undefined ||
-    protein == null ||
-    protein == undefined ||
-    sugars == null ||
-    sugars == undefined
+    fiber === null ||
+    fiber === undefined ||
+    protein === null ||
+    protein === undefined ||
+    sugars === null ||
+    sugars === undefined
   ) {
     return null;
   }

@@ -46,6 +46,7 @@ export const EditSnack = ({ API }) => {
 
   return (
     <div>
+      <h1>Edit</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input

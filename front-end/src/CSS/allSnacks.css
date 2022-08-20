@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Overlock");
+
+body {
+  font-family: "Overlock", cursive;
+}
+h1 {
+  font-family: "Carter One", cursive;
+}
+main {
+  width: 90px;
+  margin: auto;
+}
