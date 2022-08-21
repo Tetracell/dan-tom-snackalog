@@ -1,3 +1,8 @@
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 import React from "react";
 import axios from "axios";
 import { SnackItem } from "./SnackItem";
@@ -10,13 +15,12 @@ export const Snacks = ({ API }) => {
       setSnacks(res.data.payload);
     });
   }, [API, snacks]);
-  return (
-    <div id="allSnacks">
-      <body>
-        {snacks.map((snack) => {
+  return (    
+  <div id="allSnacks" className="allSnacks">
+    {snacks.map((snack) => {
           return <SnackItem snack={snack} />;
         })}
-      </body>
     </div>
   );
 };
+

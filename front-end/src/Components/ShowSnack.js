@@ -38,14 +38,14 @@ export const ShowSnack = ({ API }) => {
             {snack.is_healthy ? (
               <aside>
                 <h4>
-                  <img alt="healthy food" src={healthy}></img>
+                  <img className="heart" alt="healthy food" src={healthy}></img>
                 </h4>
               </aside>
             ) : (
               <aside>
                 <span>
                   <h4>
-                    <img alt="unhealthy food" src={unhealthy}></img>
+                    <img className="heart" alt="unhealthy food" src={unhealthy}></img>
                   </h4>
                 </span>
               </aside>

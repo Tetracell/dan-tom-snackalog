@@ -1,0 +1,30 @@
+.App {
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+}
+
+.new {
+  margin: 5% 20%;
+}
+
+.allSnacks {
+  grid-area: a;
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+img {
+  width: 140px;
+  height: auto;
+}
+
+.heart {
+  width: 30px;
+  height: auto;
+}
