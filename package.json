@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "cd back-end && npm i && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "if [ $CLIENT_ENV ]; then npm run postinstall-client; elif [ $SERVER_ENV ]; then npm run postinstall-server; else echo no environment detected, please set CLIENT_ENV or SERVER_ENV; fi",
+    "postinstall-client": "cd front-end && npm install && npm run build",
+    "postinstall-server": "cd back-end && npm install"
+   }
   },
   "repository": {
     "type": "git",
