@@ -14,10 +14,10 @@ export const SnackItem = ({ snack }) => {
       <article>
         <div>
           <img alt={snack.name} src={snack.image} />
-          <h4>
-            {snack.is_healthy ? ( <img className="heart" alt="healthy food" src={healthy}></img> ) : (<img className="heart" alt="unhealthy food" src={unhealthy}></img>
+          <h4><Link className="snacksN" to={link}>{snack.name}</Link>
+            {snack.is_healthy ? ( <img className="heart heart2" alt="healthy food" src={healthy}></img> ) : (<img className="heart heart2" alt="unhealthy food" src={unhealthy}></img>
             )}
-            <Link to={link}>{snack.name}</Link>
+            
           </h4>
         </div>
       </article>

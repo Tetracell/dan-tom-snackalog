@@ -51,29 +51,29 @@ export const EditSnack = ({ API }) => {
     <div className="new">
       <form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicText">
-          <Form.Label>Name</Form.Label>
+          <Form.Label className="editName">Name</Form.Label>
           <Form.Control id="name" type="text" value={snack.name} onChange={handleChange} placeholder="Enter Snack Name Here" required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicNumber">
-          <Form.Label>Fiber</Form.Label>
+          <Form.Label className="editName">Fiber</Form.Label>
           <Form.Control id="fiber" type="number" value={snack.fiber} onChange={handleChange} placeholder="Enter Amount of Fiber" />
         </Form.Group>
 
 
         <Form.Group className="mb-3" controlId="formBasicNumber">
-          <Form.Label>Protein</Form.Label>
+          <Form.Label className="editName">Protein</Form.Label>
           <Form.Control id="protein" type="number" value={snack.protein} onChange={handleChange} placeholder="Enter Amount of Protein" />
         </Form.Group>
 
 
         <Form.Group className="mb-3" controlId="formBasicNumber">
-          <Form.Label>Added Sugar</Form.Label>
+          <Form.Label className="editName">Added Sugar</Form.Label>
           <Form.Control id="added_sugar" type="number" value={snack.added_sugar} onChange={handleChange} placeholder="Enter Amount of Added Sugar" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicText">
-          <Form.Label>Image</Form.Label>
+          <Form.Label className="editName">Image</Form.Label>
           <Form.Control id="image" type="text" value={snack.image} onChange={handleChange} placeholder="Enter Image URL" />
         </Form.Group>
         <br />

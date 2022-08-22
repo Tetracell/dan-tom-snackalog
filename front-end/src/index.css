@@ -1,4 +1,15 @@
 
+body {
+  height: 100%;
+
+  background-image: url("https://cdn.homedit.com/wp-content/uploads/2016/03/Open-space-kitchen-with-White-Quartz-Countertops.jpg");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
 .App {
   grid-template-areas:
     "a a a a"
@@ -27,17 +38,31 @@ Navbar {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 7% 6%;
+  margin: 9% 6%;
 }
 
 img {
   width: auto;
   height: 178px;
 }
-
 .heart {
-  width: 30px;
+  width: 20px;
   height: auto;
+  display: flex;
+}
+.heart2 {
+  animation: pulse 0.5s infinite;
+  display: table;
+  animation-direction: alternate;
+  
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .01;
+  }
 }
 
 .navbar {
@@ -70,6 +95,8 @@ img {
 }
 .snackID{
   margin: 6% 23%;
+  color:#e7ff0b;
+  text-shadow: .75px .75px #000000;
 }
 .oneSnack{
   display: block;
@@ -85,11 +112,113 @@ img {
   text-align: center;
 }
 .Home{
-  margin: 17% 23%;
+  margin: 7% 23%;
 }
 
-.Slide {
-  width:auto;
-  height:auto;
-  text-align: right;
+.pics{
+  width: 2000;
+  height:2000;
+}
+.Caption{
+text-align: right;
+}
+.title{
+  font-family:fantasy;
+  color: blue;
+  text-align: center;
+  font-size: 60px;
+  text-shadow: 2px 2px #f2ff00;
+}
+.title1{
+  font-family:fantasy;
+  color: blue;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 2px 2px #d4ff00;
+}
+.subtitle{
+  font-family:fantasy;
+  color: blue;
+  text-align: center;
+  text-shadow: 0.75px 0.75px #f2ff00;
+  font-size: 30px;
+}
+
+
+.NBB{
+  font-family:fantasy;
+  font-display: chartreuse;
+}
+
+.pic1{
+    width: 20px;
+    height:20px;
+    color: blue;
+    font-size: small;
+  }
+  .PursuitApproved {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+    text-shadow: 0.5px 0.5px #ffffff;
+}
+
+
+
+.glow  {
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 
+    0 0 10px rgb(255, 255, 255), 
+    0 0 15px hsl(0, 0%, 100%), 
+    0 0 20px hsl(0, 0%, 100%), 
+    0 0 25px #d7e600, 
+    0 0 30px hsl(65, 100%, 45%), 
+    0 0 35px #e60073;
+  }
+  to {
+    text-shadow: 
+    0 0 6px rgb(246, 255, 0), 
+    0 0 7px #fff64d, 
+    0 0 8px hsl(69, 100%, 50%), 
+    0 0 9px #ffffff, 
+    0 0 11px hsl(69, 100%, 50%), 
+    0 0 12px #ffffff, 
+   
+  }
+}
+
+.Cap {
+  color: blue;
+}
+
+form{
+  color: black;
+  size: 20px;
+
+}
+
+.editName{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+.snacksPage{
+  color: black;
+  size: 20px;
+}
+
+.snacksN{
+  color:#001aff;
+  text-shadow: 2px 2px #ffffff;
+  font-size: 20px;
+  display: flex;
 }
