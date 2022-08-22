@@ -1,8 +1,7 @@
-import Button from 'react-bootstrap/Button';
-
+import Button from "react-bootstrap/Button";
 
 import React from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 const unhealthy = require("../assets/heart-regular.png");
 const healthy = require("../assets/heart-solid.png");
@@ -41,14 +40,22 @@ export const ShowSnack = ({ API }) => {
             {snack.is_healthy ? (
               <aside>
                 <h4>
-                  <img className="heart heart2" alt="healthy food" src={healthy}></img>
+                  <img
+                    className="heart heart2"
+                    alt="healthy food"
+                    src={healthy}
+                  ></img>
                 </h4>
               </aside>
             ) : (
               <aside>
                 <span>
                   <h4>
-                    <img className="heart heart2" alt="unhealthy food" src={unhealthy}></img>
+                    <img
+                      className="heart heart2"
+                      alt="unhealthy food"
+                      src={unhealthy}
+                    ></img>
                   </h4>
                 </span>
               </aside>
@@ -59,11 +66,20 @@ export const ShowSnack = ({ API }) => {
           <h3>Added Sugar: {snack.added_sugar}</h3>
         </div>
       </article>
-      <Button className="butt" href="/snacks" variant="primary">Back</Button>{''}
+      <Button className="butt" href="/snacks" variant="primary">
+        Back
+      </Button>
+      {""}
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <Button className="butt" href={`/snacks/${id}/edit`} variant="primary">Edit</Button>{''}
+      <Button className="butt" href={`/snacks/${id}/edit`} variant="primary">
+        Edit
+      </Button>
+      {""}
       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <Button className="butt"  onClick={handleDelete} variant="primary">Delete</Button>{''}
+      <Button className="butt" onClick={handleDelete} variant="primary">
+        Delete
+      </Button>
+      {""}
     </div>
   );
 };
