@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -34,50 +36,42 @@ export const NewSnack = ({ API }) => {
         console.log(error.response.data.error);
       });
   };
-
   return (
-    <div>
-      <h1>New</h1>
+    <div className="new">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          onChange={handleChange}
-          value={snack.name}
-          required
-        ></input>
-        <label htmlFor="fiber">Fiber</label>
-        <input
-          type="number"
-          id="fiber"
-          onChange={handleChange}
-          value={snack.fiber}
-        ></input>
-        <label htmlFor="protein">Protein</label>
-        <input
-          type="number"
-          id="protein"
-          onChange={handleChange}
-          value={snack.protein}
-        ></input>
-        <label htmlFor="added_sugar">Added Sugar</label>
-        <input
-          type="number"
-          id="added_sugar"
-          onChange={handleChange}
-          value={snack.added_sugar}
-        ></input>
-        <label htmlFor="image">Image</label>
-        <input
-          type="text"
-          id="image"
-          onChange={handleChange}
-          value={snack.image}
-        ></input>
+        <Form.Group className="mb-3" controlId="formBasicText">
+          <Form.Label className="editName">Name</Form.Label>
+          <Form.Control id="name" type="text" value={snack.name} onChange={handleChange} placeholder="Enter Snack Name Here" required />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicNumber">
+          <Form.Label className="editName">Fiber</Form.Label>
+          <Form.Control id="fiber" type="number" value={snack.fiber} onChange={handleChange} placeholder="Enter Amount of Fiber" />
+        </Form.Group>
+
+
+        <Form.Group className="mb-3" controlId="formBasicNumber">
+          <Form.Label className="editName">Protein</Form.Label>
+          <Form.Control id="protein" type="number" value={snack.protein} onChange={handleChange} placeholder="Enter Amount of Protein" />
+        </Form.Group>
+
+
+        <Form.Group className="mb-3" controlId="formBasicNumber">
+          <Form.Label className="editName">Added Sugar</Form.Label>
+          <Form.Control id="added_sugar" type="number" value={snack.added_sugar} onChange={handleChange} placeholder="Enter Amount of Added Sugar" />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicText">
+          <Form.Label className="editName">Image</Form.Label>
+          <Form.Control id="image" type="text" value={snack.image} onChange={handleChange} placeholder="Enter Image URL" />
+        </Form.Group>
         <br />
-        <button type="submit">Make a Snack</button>
+        <Button className="butt" variant="primary" type="submit">
+          Make New Snack
+        </Button>
       </form>
     </div>
   );
 };
+
+
