@@ -8,14 +8,17 @@ import React from "react";
 export const NavBar = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/"><h1>Snacks</h1></Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/snacks/new"><h3>New Snack</h3></Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="/snacks"><h1>Snacks</h1></Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Brand href="/"><h3>Home</h3></Navbar.Brand>
+          <br/><br/><br/>
+          <Navbar.Brand href="/snacks/new"><h3 >New Snack</h3></Navbar.Brand>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </div>
   );
 };

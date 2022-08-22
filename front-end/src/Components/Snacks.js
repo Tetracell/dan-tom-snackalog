@@ -16,7 +16,7 @@ export const Snacks = ({ API }) => {
     });
   }, [API, snacks]);
   return (    
-  <div id="allSnacks" className="allSnacks">
+  <div id="allSnacks" className="allSnacks snackOverflow ">
     {snacks.map((snack) => {
           return <SnackItem snack={snack} />;
         })}

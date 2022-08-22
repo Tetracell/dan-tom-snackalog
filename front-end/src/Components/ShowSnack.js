@@ -1,3 +1,6 @@
+import Button from 'react-bootstrap/Button';
+
+
 import React from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
@@ -29,10 +32,10 @@ export const ShowSnack = ({ API }) => {
   };
 
   return (
-    <div>
+    <div className="snackID">
       <article>
         <div>
-          <img alt={snack.name} src={snack.image} />
+          <img className="oneSnack" alt={snack.name} src={snack.image} />
           <h4>
             {snack.name}
             {snack.is_healthy ? (
@@ -56,10 +59,11 @@ export const ShowSnack = ({ API }) => {
           <div>Added Sugar: {snack.added_sugar}</div>
         </div>
       </article>
-      <Link to="/snacks">
-        <button>Back</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
+      <Button className="butt" href="/snacks" variant="primary">Back</Button>{''}
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <Button className="butt" href={`/snacks/${id}/edit`} variant="primary">Edit</Button>{''}
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <Button className="butt"  onClick={handleDelete} variant="primary">Delete</Button>{''}
     </div>
   );
 };

@@ -65,9 +65,8 @@ export const NewSnack = ({ API }) => {
           <Form.Label>Image</Form.Label>
           <Form.Control id="image" type="text" value={snack.image} onChange={handleChange} placeholder="Enter Image URL" />
         </Form.Group>
-
         <br />
-        <Button variant="primary" type="submit">
+        <Button className="butt" variant="primary" type="submit">
           Make New Snack
         </Button>
       </form>

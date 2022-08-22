@@ -1,3 +1,4 @@
+
 .App {
   grid-template-areas:
     "a a a a"
@@ -6,25 +7,89 @@
 }
 
 .new {
-  margin: 5% 20%;
+  margin: 8% 20%;
+}
+Navbar {
+  grid-template-areas:
+  "d e";
+  display: flex;
 }
 
+.newSnackB{
+  grid-area: e;
+  display: flex;
+}
 .allSnacks {
   grid-area: a;
   display: flex;
-  align-content: stretch;
+  align-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-evenly;
+  margin: 7% 6%;
 }
 
 img {
-  width: 140px;
-  height: auto;
+  width: auto;
+  height: 178px;
 }
 
 .heart {
   width: 30px;
   height: auto;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.snackID{
+  margin: 6% 23%;
+}
+.oneSnack{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 480px;
+  height: auto;
+}
+
+.butt{
+  width:auto;
+  height:auto;
+  text-align: center;
+}
+.Home{
+  margin: 17% 23%;
+}
+
+.Slide {
+  width:auto;
+  height:auto;
+  text-align: right;
 }
