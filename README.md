@@ -1,5 +1,8 @@
 # Full Stack Application Pair Project
 
+## Deployment Link
+https://lively-jelly-3a24af.netlify.app/
+
 ## Snack-a-log
 
 Create an app that allows users to log their favorite snacks. Add functionality that allows users to see whether or not their snack is healthy based on a simple algorithm.
